@@ -53,7 +53,7 @@ async function upload() {
   try {
     const res = await uploadFile(file.value)
 
-    messages.value[aiIndex].content = res.summary
+    messages.value[aiIndex].content = res.content
   } catch (e) {
     messages.value[aiIndex].content = '总结失败，请重试'
   } finally {

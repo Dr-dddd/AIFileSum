@@ -20,7 +20,7 @@ func main() {
 		c.Next()
 	})
 
-	r.POST("/upload", handler.UploadHandler)
+	r.POST("/chat", handler.ChatHandler)
 
 	r.Run(":8080")
 }
