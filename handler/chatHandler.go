@@ -37,8 +37,11 @@ func ChatHandler(c *gin.Context) {
 
 	text := string(content)
 
-	// TODO：调用大模型总结
-	summary := service.MockSummary(text)
+	summary, err := service.CallQwenSummary(text)
+	if err != nil {
+		c.JSON(500, gin.H{"error": "call qwen error"})
+		return
+	}
 
 	c.JSON(200, models.Message{
 		Role:    "assistant",

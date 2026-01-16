@@ -9,12 +9,7 @@ export async function uploadFile(file) {
 
   const res = await axios.post(
     `${BASE_URL}/chat`,
-    formData,
-    {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    }
+    formData
   )
 
   return res.data
